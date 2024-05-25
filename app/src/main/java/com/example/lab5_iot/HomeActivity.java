@@ -46,6 +46,10 @@ public class HomeActivity extends AppCompatActivity {
     private Context context;
 
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +63,17 @@ public class HomeActivity extends AppCompatActivity {
         tareaDB = TareaDatabase.getDatabase(getApplicationContext());
         tareaDao = tareaDB.tareaDao();
 
+
+
         //listaTareas = new ArrayList<>();
         //listaTareas.add(new Tarea("HOLA","VAYA VAYA",20/05/2024));
 
         //cargarTareas();
 
-
+        String cod = getIntent().getStringExtra("codigo");
+        Log.d("cod",cod);
             new Thread(() -> {
-                listaTareas = tareaDao.obtenerTareas();
+                listaTareas = tareaDao.obtenerTareasPorCodigo(cod);
                 Log.d("entra?1","si");
                 runOnUiThread(() -> {
                             Log.d("entra?2", "si");
@@ -164,6 +171,8 @@ public class HomeActivity extends AppCompatActivity {
     public void irAnadirTareaActivity(View view) {
 
         Intent intent = new Intent(this, AnadirTareaActivity.class);
+        String cod = getIntent().getStringExtra("codigo");
+        intent.putExtra("codigo",cod);
         //iniciar activity
         startActivity(intent);
 

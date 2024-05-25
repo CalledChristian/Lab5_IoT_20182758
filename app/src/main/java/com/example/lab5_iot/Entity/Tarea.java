@@ -20,11 +20,14 @@ public class Tarea implements Serializable {
 
     private Date fechaVencimiento;
 
+    private String codigoPUCP;
+
     public Tarea (String titulo,
-                  String descripcion,Date fechaVencimiento){
+                  String descripcion,Date fechaVencimiento,String codigoPUCP){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fechaVencimiento = fechaVencimiento;
+        this.codigoPUCP = codigoPUCP;
     }
 
 
@@ -58,5 +61,13 @@ public class Tarea implements Serializable {
 
     public void setFechaVencimiento(Date fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public String getCodigoPUCP() {
+        return codigoPUCP;
+    }
+
+    public void setCodigoPUCP(String codigoPUCP) {
+        this.codigoPUCP = codigoPUCP;
     }
 }

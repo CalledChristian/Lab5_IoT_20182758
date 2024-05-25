@@ -24,4 +24,7 @@ public interface TareaDao {
     @Query("SELECT * FROM tarea")
     public List<Tarea> obtenerTareas();
 
+    @Query("SELECT * FROM tarea WHERE codigoPUCP = :codigo ")
+    public List<Tarea> obtenerTareasPorCodigo(String codigo);
+
 }

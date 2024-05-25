@@ -107,7 +107,8 @@ public class AnadirTareaActivity extends AppCompatActivity {
             fecha.setError("Seleccione una fecha de vencimiento");
             return;
         }
-        Tarea tarea = new Tarea(tituloStr, descripcionStr, fechaTarea);
+        String cod = getIntent().getStringExtra("codigo");
+        Tarea tarea = new Tarea(tituloStr, descripcionStr, fechaTarea,cod);
         //Insertar tarea
         tareaDB = TareaDatabase.getDatabase(getApplicationContext());
         tareaDao = tareaDB.tareaDao();
@@ -119,6 +120,7 @@ public class AnadirTareaActivity extends AppCompatActivity {
 
         //regresar a lista de tareas
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("codigo",cod);
         //iniciar activity
         startActivity(intent);
 

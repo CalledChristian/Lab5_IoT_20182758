@@ -1,6 +1,9 @@
 package com.example.lab5_iot.Adapter;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lab5_iot.AnadirTareaActivity;
 import com.example.lab5_iot.Dao.TareaDao;
 import com.example.lab5_iot.Database.TareaDatabase;
 import com.example.lab5_iot.Entity.Tarea;
 import com.example.lab5_iot.R;
+import com.example.lab5_iot.verTareaActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -100,6 +105,14 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
             }
         );
 
+        holder.itemView.findViewById(R.id.boton1).setOnClickListener(v -> {
+                    Intent intent = new Intent(getContext(), verTareaActivity.class);
+                    intent.putExtra("tarea",ta);
+                    //iniciar activity
+                    startActivity(intent);
+                }
+        );
+
 
         /*if(botonEliminar.setOnClickListener(view->{
             new Thread(() -> {
@@ -111,6 +124,11 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
 
 
     }
+
+    private void startActivity(Intent intent) {
+        startActivity(intent);
+    }
+
 
     @Override
     public int getItemCount() {

@@ -11,7 +11,7 @@ import com.example.lab5_iot.Converter.Converters;
 import com.example.lab5_iot.Dao.TareaDao;
 import com.example.lab5_iot.Entity.Tarea;
 
-@Database(entities = {Tarea.class}, version = 1)
+@Database(entities = {Tarea.class}, version = 2)
 @TypeConverters({Converters.class})
 public abstract class TareaDatabase extends RoomDatabase {
 
@@ -24,7 +24,7 @@ public abstract class TareaDatabase extends RoomDatabase {
             synchronized (TareaDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    TareaDatabase.class, "tarea_database")
+                                    TareaDatabase.class, "tarea_database2")
                             .build();
                 }
             }
