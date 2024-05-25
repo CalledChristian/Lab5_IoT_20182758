@@ -23,6 +23,7 @@ public class verTareaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver_tarea);
 
 
+
         Button recordatorio = findViewById(R.id.button2);
         recordatorio.setOnClickListener(v -> {
             showDateTimePicker();

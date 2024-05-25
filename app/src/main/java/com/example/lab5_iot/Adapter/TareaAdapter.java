@@ -106,11 +106,16 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
         );
 
         holder.itemView.findViewById(R.id.boton1).setOnClickListener(v -> {
+            new Thread((new Runnable() {
+                @Override
+                public void run() {
                     Intent intent = new Intent(getContext(), verTareaActivity.class);
                     intent.putExtra("tarea",ta);
                     //iniciar activity
                     startActivity(intent);
                 }
+                })).start();
+            }
         );
 
 

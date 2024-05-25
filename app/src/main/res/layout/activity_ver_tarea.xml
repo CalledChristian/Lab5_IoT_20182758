@@ -140,6 +140,19 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"/>
 
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="15dp"/>
+
     <Button
         android:id="@+id/button2"
         android:layout_width="200dp"
@@ -154,14 +167,26 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="660dp"
         android:backgroundTint="#0E2395"
         android:text="Regresar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="660dp"
+        android:backgroundTint="#0E2395"
+        android:text="Guardar"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 
